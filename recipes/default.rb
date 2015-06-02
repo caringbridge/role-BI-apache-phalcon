@@ -8,6 +8,7 @@
 #
 
 include_recipe 'php'
+include_recipe 'yum-remi'
 
 ['git', 'php-devel', 'pcre-devel', 'gcc', 'make', 'httpd', 'php-mysql', 'php-pear'].each do |rpm|
   package rpm do
