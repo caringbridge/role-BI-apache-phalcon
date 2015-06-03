@@ -7,14 +7,22 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'php'
+#include_recipe 'php'
 include_recipe 'yum-remi'
 
-['git', 'php-devel', 'pcre-devel', 'gcc', 'make', 'httpd', 'php-mysql', 'php-pear'].each do |rpm|
+# ['git', 'php-devel', 'pcre-devel', 'gcc', 'make', 'httpd', 'php-mysql', 'php-pear'].each do |rpm|
+#   package rpm do
+#     action :install
+#   end
+# end
+
+['git', 'pcre-devel', 'gcc', 'make', 'httpd', 'php56', 'php56-php-devel', 'php56-php-mysql', 'php56-php-pear'].each do |rpm|
   package rpm do
     action :install
   end
 end
+
+
 
 php_pear 'mongo' do
   action :install
