@@ -9,6 +9,7 @@
 
 #include_recipe 'php::source'
 include_recipe 'yum-remi'
+include_recipe 'role-BI-apache-phalcon'
 #
 # ['git', 'php-devel', 'pcre-devel', 'gcc', 'make', 'httpd', 'php-mysql', 'php-pear'].each do |rpm|
 #   package rpm do
