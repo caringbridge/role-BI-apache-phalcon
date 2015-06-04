@@ -8,8 +8,9 @@
 #
 
 #include_recipe 'php::source'
-include_recipe 'yum-remi'
-include_recipe 'role-BI-apache-phalcon'
+#include_recipe 'yum-remi'
+#include_recipe 'role-BI-apache-phalcon'
+include_recipe 'role-zendserver'
 #
 # ['git', 'php-devel', 'pcre-devel', 'gcc', 'make', 'httpd', 'php-mysql', 'php-pear'].each do |rpm|
 #   package rpm do
@@ -17,15 +18,15 @@ include_recipe 'role-BI-apache-phalcon'
 #   end
 # end
 
-['git', 'pcre-devel', 'gcc', 'make', 'httpd', 'php56', 'php56-php-devel', 'php56-php-mysql', 'php56-php-pear'].each do |rpm|
-  package rpm do
-    action :install
-  end
-end
+# ['git', 'pcre-devel', 'gcc', 'make', 'httpd', 'php56', 'php56-php-devel', 'php56-php-mysql', 'php56-php-pear'].each do |rpm|
+#   package rpm do
+#     action :install
+#   end
+# end
 
 
 
-role_bi_apache_phalcon_pear 'mongo' do
+zendserver_pear 'mongo' do
   action :install
 end
 
