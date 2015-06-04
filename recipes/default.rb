@@ -25,9 +25,10 @@ end
 
 
 
-role-BI-apache-phalcon_pear 'mongo' do
+role-bi-apache-phalcon_pear 'mongo' do
   action :install
 end
+
 
 git '/usr/local/src/phalcon' do
   repository 'git://github.com/phalcon/cphalcon.git'
