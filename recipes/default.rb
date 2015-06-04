@@ -25,7 +25,7 @@ end
 
 
 
-role-bi-apache-phalcon_pear 'mongo' do
+role_bi_apache_phalcon_pear 'mongo' do
   action :install
 end
 
