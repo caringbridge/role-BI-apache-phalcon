@@ -24,7 +24,9 @@ include_recipe 'role-zendserver'
 #   end
 # end
 
-
+execute 'add zend to env' do
+  command %{export PATH=$PATH:/usr/local/zend/bin}
+end
 
 zendserver_pear 'mongo' do
   action :install
