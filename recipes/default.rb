@@ -42,6 +42,13 @@ git '/usr/local/src/phalcon' do
   group 'root'
 end
 
+directory "/etc/php.d" do
+  owner "root"
+  group "root"
+  mode 0755
+  action :create
+end
+
 execute 'phalcon-build' do
   cwd '/usr/local/src/phalcon/build'
   user 'root'
