@@ -24,8 +24,9 @@ include_recipe 'role-zendserver'
 #   end
 # end
 
-execute 'add zend to env' do
-  command %{export PATH=$PATH:/usr/local/zend/bin}
+magic_shell_environment 'PATH' do
+  value '$PATH:/usr/local/zend/bin'
+
 end
 
 zendserver_pear 'mongo' do
@@ -45,6 +46,7 @@ execute 'phalcon-build' do
   cwd '/usr/local/src/phalcon/build'
   user 'root'
   command %{./install}
+  environment 'PATH' => "$PATH:/usr/local/zend/bin"
 
   not_if do
   ::File.exists?('/etc/php.d/phalcon.ini')

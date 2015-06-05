@@ -15,3 +15,4 @@ depends 'role-zendserver'
 depends 'yum'
 depends 'zendserver', '~>1.1.1'
 depends 'yum-epel'
+depends 'magic_shell', '~> 1.0.0' # started at version 1.0.0
