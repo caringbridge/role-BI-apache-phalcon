@@ -43,11 +43,12 @@ execute 'phalcon-build' do
   end
 end
 
-template '/etc/php.d/phalcon.ini' do
+# template '/etc/php.d/phalcon.ini' do
+template '/usr/local/zend/etc/conf.d/phalcon.ini' do
   source 'phalcon.ini.erb'
   owner 'root'
-  group 'root'
-  mode 0644
+  group 'zend'
+  mode 0664
 end
 
 # This is for HTTPD
