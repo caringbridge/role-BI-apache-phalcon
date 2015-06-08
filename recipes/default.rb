@@ -36,7 +36,7 @@ execute 'phalcon-build' do
   cwd '/usr/local/src/phalcon/build'
   user 'root'
   command %{./install}
-  environment ({ 'PATH' => "/usr/local/zend/bin" })
+  environment 'PATH' => "/usr/local/zend/bin:#{ENV["PATH"]}"
 
   not_if do
   ::File.exists?('/etc/php.d/phalcon.ini')
