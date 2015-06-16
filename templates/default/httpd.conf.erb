@@ -335,7 +335,7 @@ DocumentRoot "/var/www/html"
 # It can be "All", "None", or any combination of the keywords:
 #   Options FileInfo AuthConfig Limit
 #
-    AllowOverride <% node[:apache][:htaccess][:allowoverride] %>
+    AllowOverride <%= node[:apache][:htaccess][:allowoverride] %>
 
 #
 # Controls who can get stuff from this server.
