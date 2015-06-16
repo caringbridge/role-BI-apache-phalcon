@@ -43,6 +43,14 @@ execute 'phalcon-build' do
   end
 end
 
+# template '/etc/httpd/conf/httpd.conf'
+template '/etc/httpd/conf/httpd.conf' do
+  source 'httpd.conf.erb'
+  owner 'root'
+  group 'root'
+  mode 0644
+end
+
 # template '/etc/php.d/phalcon.ini' do
 template '/usr/local/zend/etc/conf.d/phalcon.ini' do
   source 'phalcon.ini.erb'
@@ -50,8 +58,3 @@ template '/usr/local/zend/etc/conf.d/phalcon.ini' do
   group 'zend'
   mode 0664
 end
-
-# This is for HTTPD
-# httpd_service 'default' do
-#   action [:create, :start]
-# end
